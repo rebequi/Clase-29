@@ -1,5 +1,8 @@
-const cards = document.querySelector (".card")
+const cards = document.querySelectorAll (".card") 
+// seleccione todas las cartas
 const buttons = document.querySelectorAll (".filtro-boton")
+console.log (buttons)
+
 const sexo = document.querySelectorAll ("input[type ='radio']")
 const filtroBusqueda = document.querySelector ('#name')
 
@@ -11,10 +14,10 @@ filtroBusqueda.onkeydown = () => {
             card.classList.remove('borrar')
         }
             else {
-                card.classList.add.('borrar')
+                card.classList.add('borrar')
             }
         }
 
     } 
 
-    
+
