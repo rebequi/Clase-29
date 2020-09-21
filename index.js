@@ -1,13 +1,18 @@
-const boton = document.getElementById("button")
-const cards = document.querySelectorAll (".card")
+const cards = document.querySelector (".card")
+const buttons = document.querySelectorAll (".filtro-boton")
+const sexo = document.querySelectorAll ("input[type ='radio']")
+const filtroBusqueda = document.querySelector ('#name')
 
-
-
-boton.onclick = () => {
+filtroBusqueda.onkeydown = () => {
+    console.log ("hola")
     for (let card of cards) {
-    
-        if (card.dataset.nombre === "boris") {
-            card.classList.add ('hidden')
+        const busquedaNormalizada = filtroBusqueda.value.toLowerCase()
+        if (card.dataset.nombre.includes (busquedaNormalizada)) {
+            card.classList.remove('borrar')
         }
-    }
-}
+            else {
+                card.classList.add.('borrar')
+            }
+        }
+
+    } 
