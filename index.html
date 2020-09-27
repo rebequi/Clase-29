@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="card" data-nombre="boris" data-sexo="macho" data-colores="Blanco">
+    <div class="card" data-nombre="boris" data-sexo="macho" data-colores="blanco">
       <img src="http://www.placekitten.com/300">
       <div class="title">
         <h4>Boris</h4>
@@ -38,37 +38,40 @@
   </div>
 
   <form>
-    <label for="name">nombre<input type="text" name="nombre" id="name" /></label>
 
 
-    <label>Colores</label>
+    <!-- Este es el filtro por nombre -->
 
-
-    <input type="checkbox" class="filtro-checkbox" value="todos" data-colores="todos" checked>Todos</button>
-
-    <input type="checkbox" class="filtro-checkbox" value="blanco" data-colores="blanco">Blanco</button>
-    <input type="checkbox" class="filtro-checkbox" value="gris" data-colores="gris">gris</button>
-    <input type="checkbox" class="filtro-checkbox" value="tricolor" data-colores="tricolor">tricolor</button>
+    <label for="filtro-nombre"> Filtrar por nombre
+      <input type="text" id="filtro-nombre">
+    </label>
 
 
 
+    <!-- Este es el filtro por coloes -->
 
-    <!-- <button type="button" class ="filtro-boton" data-colores="blanco">Blanco</button>
-      <button type="button" class ="filtro-boton" data-colores="gris">Gris</button>
-      <button type="button" class ="filtro-boton" data-colores="tricolor">tricolor</button> -->
+    <label>Colores
 
+
+      <input type="checkbox" class="filtro-colores" value="todos" data-colores="todos">Todos</button>
+
+      <input type="checkbox" class="filtro-colores" value="blanco" data-colores="blanco">Blanco</button>
+      <input type="checkbox" class="filtro-colores" value="gris" data-colores="gris">gris</button>
+      <input type="checkbox" class="filtro-colores" value="tricolor" data-colores="tricolor">tricolor</button>
+
+    </label>
+
+    <!-- Este es el filtro por sexo -->
     <div>
-      <label>Sexo</label>
+      <label>Sexo
 
-      <input type="radio" name="sexo" data-sexo="macho"> Macho
-      <input type="radio" name="sexo" data-sexo="hembra"> Hembra
-      <input type="radio" name="sexo" data-sexo="indistinto"> indistinto
+        <input type="radio" name="sexo" data-sexo="macho"> Macho
+        <input type="radio" name="sexo" data-sexo="hembra"> Hembra
+        <input type="radio" name="sexo" data-sexo="indistinto"> indistinto
 
 
-
+      </label>
     </div>
-
-    <button id="button"> desparece gatito</button>
 
 
   </form>
