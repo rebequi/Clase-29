@@ -1,16 +1,89 @@
 const cards = document.querySelectorAll(".card")
 const buttons = document.querySelectorAll(".filtro-boton")
 const filtroSexo = document.querySelectorAll("input[type ='radio']")
-const filtroBusqueda = document.querySelector('#name')
+const filtroBusqueda = document.querySelector('#filtro-nombre')
 const filtroColores = document.querySelectorAll(".filtro-colores")
 
 console.log (filtroSexo)
 console.log (filtroColores)
+console.log (filtroBusqueda)
+
+
+
+
+//                      PASO 1. 
+
+// Aqui vamos a realizar la funcion pasa filtros, si cumple con el filtro me retonra true
+// 1. Debemos revisar si hay algo escrito en el input
+// Si hay algo escrito en el input TIENE que coincidir con la tarjeta para que devuelva true
+// Si esto no coincide debe retornar false
+
+const pasaFiltros = (card) => {
+
+  if (hayAlgoEscritoEnElInput()) {
+    if (compararInputConTarjeta(card)){
+      return true
+    }
+    else {
+      return false
+    }
+  }
+  else {
+    return
+  }
+
+}
+
+
+//                                PASO 2 
+// funciones para mostrar/ocultar tarjetS
+
+const ocultarTarjeta = (card) => {
+  return card.classList.add("borrar")
+}
+
+const mostrarTarjeta = (card) => {
+  return card.classList.remove("borrar")
+}
+
+
+
+//                                PASO 3 
+// funciones paracl filtrar las tarjetas, ya sea agregando las funciones anteriores si es 
+// para borrar o agregar la clase "borrar"
+
+
+const filtrarTarjetas = () => {
+  for (let card of cards) {
+    if (pasaFiltros(card)) {
+      mostrarTarjeta (card)
+    }
+    else {
+      ocultarTarjeta(card)
+    }
+  }
+}
+
+
+//                      PASO 4. Aqui comparamos que lo escrito por el usuario sea lo que contiene la tarjeta
+
+const compararInputConTarjeta = (card) => {
+  if (card.dataset.nombre.includes(filtroBusqueda.value.toLowerCase())) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+
+
+
+//                      PASO 5  Aqui estoy REVISANDO si hay algun checkbox chequeado, si es asi me retorna true
 
 
 
 const hayAlgunCheckBoxChequeado = () => {
-  for (checkbox of filtroColores) {
+  for (let checkbox of filtroColores) {
     console.log (checkbox)
     if (checkbox.checked) {
       return true
@@ -18,19 +91,51 @@ const hayAlgunCheckBoxChequeado = () => {
 
 
   }
+  return false
 }
+console.log (hayAlgunCheckBoxChequeado())
 
 
+//                      PASO 6. Aqui estoy REVISANDO si hay algun RADIO chequeado, si es asi me retorna true
 
 const hayAlgunRadioChequeado = () => {
-  for (radio of filtroSexo) {
+  for (let radio of filtroSexo) {
     console.log(radio)
     if (radio.checked) {
 
       return true
     }
   }
+  return false
 }
+
+console.log (hayAlgunRadioChequeado())
+
+
+//                      PASO 7.Ver si el nombre escrito en el input coincide con el data nombre de la tarjeta, si es asi ME RETORNA TRUE
+
+const hayAlgoEscritoEnElInput = () => {
+  if (filtroBusqueda.value) {
+    return true
+  }
+}
+
+filtroBusqueda.oninput = () => {
+
+  filtrarTarjetas()
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
