@@ -152,58 +152,7 @@ filtroBusqueda.oninput = () => {
 
 
 
-//========================
-
-
-
-// Este codigo es ejemplo para poder realizar tarea por tarea, o sea, separar funciones pequeñas para poder 
-//hacer el recorrido de los checkbox
-
-
-// const hayAlgunCheckBoxChequeado = () => {
-//     for (checkbox of filtroColor) {
-//       if (checkbox.checked) {
-//         return true
-//       }
-//     }
-//     return false
-//   }
-
-// Ver si el nombre escrito en el input coincide con el data nombre de la tarjeta
-
-// const nombreEscritoPorElUsuario = () => {
-// for (nombreDelGatito of filtroBusqueda) {
-//     if (card.dataset.nombre===nombreDelGatito.includes(pippin) ) {
-//         return true
-//     }
-// }
-// }
-
-// console.log (nombreEscritoPorElUsuario())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =================================================================
+// ================================================================= este era el codigo anterior D:
 
 // Aqui estoy hacciendo funcion para busqueda del nombre de los gatitos por su nombre en el input
 
